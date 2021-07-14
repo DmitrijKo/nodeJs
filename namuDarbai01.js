@@ -18,7 +18,7 @@ async function main() {
     var sk2 = await sveikasSkaicius("Ivesk 2-os krastines ilgi: ");
     var sk3 = await sveikasSkaicius("Ivesk 3-ios krastines ilgi: ");
 
-    if (sk1 + sk2 > sk3 || sk1 + sk3 > sk2 || sk2 + sk3 > sk1) {
+    if (sk1 + sk2 > sk3 && sk1 + sk3 > sk2 && sk2 + sk3 > sk1) {
        console.log('Trikampio perimetras yra:', sk1 + sk2 + sk3)
        console.log('Trikampio plotas yra:', Math.sqrt((sk1 + sk2 + sk3) / 2 * (((sk1 + sk2 + sk3) / 2) - sk1) * (((sk1 + sk2 + sk3) / 2) - sk2) * (((sk1 + sk2 + sk3) / 2) - sk3)))
     } else {
