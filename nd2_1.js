@@ -22,13 +22,26 @@ function sveikasSkaicius(msg) {
 }
 
 async function main() {
-    // var sk = await sveikasSkaicius("ivesk skaiciu: ");
-    // var zp = await tekstoIvedimas("Pasirink A/P/Z/X: ");
+   var nuo = 1;
+   var iki = 3;
+   
+   while (!(zp === 'X')) {
+      var zp = await tekstoIvedimas("Pasirink A/P/Z/X: ");
+      var kp = Math.trunc(Math.random() * (iki - nuo + 1) + nuo);
 
-    // console.log(zp);
-
-
-    rl.close();
+      if ((kp === 1 && zp === 'P') || (kp === 2 && zp === 'Z') || (kp === 3 && zp === 'A')) {
+         console.log('Tu laimejai');
+      } else if ((kp === 1 && zp === 'Z') || (kp === 2 && zp === 'A') || (kp === 3 && zp === 'P')) {
+         console.log('Laimejo kompiuteris');
+      } else  if ((kp === 1 && zp === 'A') || (kp === 2 && zp === 'P') || (kp === 3 && zp === 'Z')) {
+         console.log('Lygiosios');
+      } else {
+         console.log('Blogas pasirinkimas! Pakartok!')
+      }
+   }
+   console.log('Zaidimo pabaiga!')
+ 
+   rl.close();
 }
 
 main();
