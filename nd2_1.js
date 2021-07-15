@@ -25,7 +25,7 @@ async function main() {
    var nuo = 1;
    var iki = 3;
    
-   while (!(zp === 'X')) {
+   while (zp != 'X') {
       var zp = await tekstoIvedimas("Pasirink A/P/Z/X: ");
       var kp = Math.trunc(Math.random() * (iki - nuo + 1) + nuo);
 

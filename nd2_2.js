@@ -1,24 +1,24 @@
 const readline = require("readline");
 
 const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
+   input: process.stdin,
+   output: process.stdout
 });
 
 function tekstoIvedimas(msg) {
-    return new Promise((resolve, reject) => {
-        rl.question(msg, (txt) => {
-            resolve(txt);
-        });
-    });
+   return new Promise((resolve, reject) => {
+      rl.question(msg, (txt) => {
+         resolve(txt);
+      });
+   });
 }
 
 function sveikasSkaicius(msg) {
-    return new Promise((resolve, reject) => {
-        rl.question(msg, (num) => {
-            resolve(parseInt(num));
-        });
-    });
+   return new Promise((resolve, reject) => {
+      rl.question(msg, (num) => {
+         resolve(parseInt(num));
+      });
+   });
 }
 
 async function main() {
@@ -34,6 +34,7 @@ async function main() {
    var z = 0;
 
    while (i <= zk) {
+      // Skaiciuojam kas laimejo.
       var kp1 = Math.trunc(Math.random() * (iki - nuo + 1) + nuo);
       var kp2 = Math.trunc(Math.random() * (iki - nuo + 1) + nuo);
 
@@ -43,11 +44,13 @@ async function main() {
       } else if ((kp1 === 1 && kp2 === 3) || (kp1 === 2 && kp2 === 1) || (kp1 === 3 && kp2 === 2)) {
          pc1Laimejo = pc1Laimejo + 1;
          i++;
-      } else  {
+      } else {
          lygiosios = lygiosios + 1;
          i++;
       }
 
+
+      // Skaiciuojam kiek iskrito Akmuo, Popierius, Zirkles
       if (kp1 === 1 || kp2 === 1) {
          a = a + 1;
       } else if (kp1 === 2 || kp2 === 2) {
@@ -62,7 +65,7 @@ async function main() {
    console.log('Akmuo iskrito:', a);
    console.log('Popierius iskrito:', p);
    console.log('Zirkles iskrito:', z);
- 
+
    rl.close();
 }
 

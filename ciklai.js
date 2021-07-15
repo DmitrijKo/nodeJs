@@ -13,9 +13,17 @@ console.log(count);
 
 ///
 
-//var nuo = 1;
-//var iki = 3;
+// Daugybos lentele.
+var nuo = 1;
+var iki = 3;
 
-//while () {
+var i = nuo;
 
-//}
+while (i <= iki) {
+   var j = nuo;
+   while (j <= iki) {
+      console.log(i * j);
+      j = j + 1;
+   }
+   i = i + 1;
+}
