@@ -29,6 +29,9 @@ async function main() {
    var pc1Laimejo = 0;
    var pc2Laimejo = 0;
    var lygiosios = 0;
+   var a = 0;
+   var p = 0;
+   var z = 0;
 
    while (i <= zk) {
       var kp1 = Math.trunc(Math.random() * (iki - nuo + 1) + nuo);
@@ -44,10 +47,21 @@ async function main() {
          lygiosios = lygiosios + 1;
          i++;
       }
+
+      if (kp1 === 1 || kp2 === 1) {
+         a = a + 1;
+      } else if (kp1 === 2 || kp2 === 2) {
+         p = p + 1;
+      } else {
+         z = z + 1;
+      }
    }
    console.log('PC1 laimejo:', pc1Laimejo);
    console.log('PC2 laimejo:', pc2Laimejo);
    console.log('Lygiosios:', lygiosios);
+   console.log('Akmuo iskrito:', a);
+   console.log('Popierius iskrito:', p);
+   console.log('Zirkles iskrito:', z);
  
    rl.close();
 }
