@@ -8,5 +8,7 @@ for (let i = 0; i < m.length; i++) {
    suma += m[i]; 
    vidurkis = suma / m.length;
 }
-console.log(suma);
-console.log(vidurkis);
+console.log('Masyvo suma yra:', suma);
+console.log('Masyvo vidurkis yra:', vidurkis);
+
+
