@@ -158,13 +158,20 @@ let puodukas1 = {
    turis: 300,
    kiekis: 80,
    ipilk: function (kiek) {
-      this.kiekis += kiek;     // <--- 'this' sako, kad 'ipilk' funkcija veikia su 'puodukas' objektu.
+      this.kiekis += kiek; // <--- 'this' sako, kad 'ipilk' funkcija veikia su 'puodukas' objektu.
    },
    isgerk: function (kiek) {
-      this.kiekis -= kiek;     // <--- 'this' sako, kad 'ipilk' funkcija veikia su 'puodukas' objektu.
+      this.kiekis -= kiek; // <--- 'this' sako, kad 'ipilk' funkcija veikia su 'puodukas' objektu.
    }
 };
 
-console.log(puodukas1);
-puodukas1.ipilk(100);
-console.log(puodukas1);
+//console.log(puodukas1);
+//puodukas1.ipilk(100);
+//console.log(puodukas1);
+
+
+
+///===========///
+
+
+
