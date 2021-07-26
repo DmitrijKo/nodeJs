@@ -10,9 +10,17 @@ o.kitaSavybe = 5;
 Object.defineProperty(o, "kitaSavybe", {
    enumerable: true,    
    configurable: true,                                   // <--- PAVYZDYS ---> // Property descriptor
-   writable: true,
-   value: 5   
+
+   writable: true, ||
+   value: 5        || 
+
+   get:            ||
+   set:            ||
 });
+
+/// Object.defineProperty vienu metu gali buti, arba 'writable' su 'value', arba 'get' su 'set'. 
+/// Visi kartu negali buti!!!
+
 */
 console.log(o);
 console.log('-----------');
