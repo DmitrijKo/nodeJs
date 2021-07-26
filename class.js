@@ -64,7 +64,7 @@ let n2 = new Namas(9, 2);
 let n3 = new Namas(5, 5, "zalias");
 let n4 = new Namas(7, 2, "raudonas");
 
-console.log(n1);
-console.log(n2);
-console.log(n3);
-console.log(n4);
+//console.log(n1);
+//console.log(n2);
+//console.log(n3);
+//console.log(n4);
