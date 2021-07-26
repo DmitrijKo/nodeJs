@@ -38,7 +38,7 @@ let zmogus = {
 };
 
 Object.defineProperty(zmogus, "pilnasVardas", {
-   configurable: true,    // <--- leidzia arba draudzia manipulioti savybes savybem.
+   configurable: true,    // <--- leidzia arba draudzia manipuliuoti savybes savybem.
    enumerable: true,      // <--- matom naujai sukurta savybe "pilnasVardas".
    get: function () {     // <--- sukuriam GET'eri (tai metodas kuris negali gauti argumentu).
       let ret = "";       // <--- sukuriam kintamaji.
