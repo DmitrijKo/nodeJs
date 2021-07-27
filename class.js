@@ -68,3 +68,8 @@ let n4 = new Namas(7, 2, "raudonas");
 //console.log(n2);
 //console.log(n3);
 //console.log(n4);
+
+
+/// ================ ///
+
+
