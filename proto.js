@@ -33,7 +33,7 @@ let o2 = new Obuolys();
 
 while (!o1.arPrinokes()) {
    o1.nokstam();
-   console.log(o1);
+   //console.log(o1);
 }
 
 //console.log("Valgom", o1);
@@ -91,3 +91,8 @@ SportineMasina.prototype.pakeiskSpoilerioPozicija = function () { // Sukuriam na
 }
 
 let parsas = new SportineMasina('Porsas', 300); // Sukuriam kintamaji ir i ji irasom 'SportineMasina' savybes su paduotais argumentais, bei 'Masina' savybem.
+parsas.gazas(100);
+parsas.vaziuojam();
+parsas.gazas(185);
+parsas.pakeiskSpoilerioPozicija();
+console.log(parsas);
