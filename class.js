@@ -84,12 +84,25 @@ class TransportoPriemone {  // Kuriam nauja klase 'TransportoPriemone'.
 }
 
 class Masina extends TransportoPriemone {  // Kuriam nauja klase 'Masina' ir kad sita klase paveldetu 'TransportoPriemone' prototype, mes ja sulinkinam 'EXTENDS' ir nurodom su kuo linkinam (siuo atveju su klase 'TransportoPriemone').
-
-    constructor(pavadinimas, maxGreitis) {  // klase turi konstruktoriu kuris priema argumentus 'pavadinimas' ir 'maxGreitis'.
+   
+   #temp;                                   // sukuriam privacia savybe. Ja galima pasiekti tik is sios klases 'Masina' klases savybes 'kondicionerius' metodu get'eriu ir set'eriu.
+    
+   constructor(pavadinimas, maxGreitis) {  // klase turi konstruktoriu kuris priema argumentus 'pavadinimas' ir 'maxGreitis'.
         super(pavadinimas);                 // su sia sintakse paveldim 'TransportoPriemone' konstruktoriu. Ir nuo siol klase konstruktorius 'Masina' turi klases 'TransportoPriemone' konstruktoriaus kintamuaji 'this.pavadinimas' su jos klases paduotu argumentu.
         this.maxGreitis = maxGreitis;       // argumentas 'maxGreitis' patenka i naujai sukurta klases kintamiji 'this.maxGreitis'.
         this.greitis = 0;                   // Sukuriam nauja klases kintamiji 'greitis' su reiksme 0.
         this.kelias = 0;                    // Sukuriam nauja klases kintamiji 'kelias' su reiksme 0.
+        this.#temp = 30;
+    }
+
+    get kondicionierius() {                    // sukurem klaseje 'Masina' nauja savybe 'kondicionerius' ir priskyrem jai metoda SET. 
+      return this.#temp;                       // grazinam reiksme '#temp'.
+    }
+
+    set kondicionierius(value) {               // 'kondicionerius' savybei priskyrem metoda GET su galimybe gauti argumenta.
+      if (value >= 16 && value <= 30) {           //  jeigu salyga atitinka, vykdom ja.
+          this.#temp = value;                     //  VYKDOM LOGIKA. Pakeciam '#temp' savybe i paduota argumenta.
+      }
     }
 
     gazas(kiek) {                              // kuriam funkcija kuri ikrenta i klases objekto prototype.
@@ -112,6 +125,10 @@ class Masina extends TransportoPriemone {  // Kuriam nauja klase 'Masina' ir kad
 
     beep() {                                                       // kuriam funkcija kuri ikrenta i klases objekto prototype.
         console.log("Masina " + this.pavadinimas + " sako beep");
+    }
+
+    static atstumasTarpMasinu(m1, m2) {  // statinis metodas kuri galim iskviesti su klase 'Masina' pvz. Masina.atstumasTarpMasinu(porsas, bmw); 
+      return m1.kelias - m2.kelias;         // grazinam rezultata.
     }
 }
 

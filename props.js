@@ -61,7 +61,7 @@ Object.defineProperty(zmogus, "pilnasVardas", {
       }
       return ret; // <--- ir grazinam 'ret' reiksme, t.y tarpas ir pavarde is 'zmogus' objekto 'pavarde' savybes reiksmes.
    },
-   set: function (value) { // <--- sukuriam SET'eri (tai yra metodas kuris GAUNA ARGUMENTA is naujai sukutos savybes 'pilnasVardas').
+   set: function (value) { // <--- sukuriam SET'eri (tai yra metodas kuris GAUNA ARGUMENTA is naujai sukurtos savybes 'pilnasVardas').
       let parts = value.split(" "); // <--- splitinam gauta argumenta, atskiriam tarpais ir priskiriam naujai sukurtam 'parts' kintamajam.
       if (parts.length == 0) { // <--- jeigu kintamojo 'parts' ilgis lygus 0
          delete this.vardas; // <--- trinam is 'zmogus objekto' savybe 'vardas'.
