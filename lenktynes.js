@@ -59,20 +59,22 @@ class SportineMasina extends Masina {
    }
 }
 
-let m1 = new Masina('Volvo', 220);
-let m2 = new Masina('BMW M5', 250);
-let m3 = new Masina('Opel', 200);
-let m4 = new Masina('Mercedes-Benz', 260);
-let m5 = new Masina('Ford', 230);
-let m6 = new Masina('Peugeot', 220);
-let m7 = new SportineMasina('Bugatti', 350);
-let m8 = new SportineMasina('Porshe', 330);
 
-let masinuMasyvas = [];
 
-m8.gazas(100);
-m8.gazas(-101);
-m8.gazas(50);
-m8.gazas(-52);
+const masinuMasyvas = [
+   new Masina('Volvo', 220),
+   new Masina('BMW M5', 250),
+   new Masina('Opel', 200),
+   new Masina('Mercedes-Benz', 260),
+   new Masina('Ford', 230),
+   new Masina('Peugeot', 220),
+   new SportineMasina('Bugatti', 350),
+   new SportineMasina('Porshe', 330)
+];
 
-console.log(m8);
+masinuMasyvas[7].gazas(100);
+masinuMasyvas[7].gazas(-101);
+masinuMasyvas[7].gazas(50);
+masinuMasyvas[7].gazas(52);
+
+console.log(masinuMasyvas[7]);
