@@ -27,11 +27,9 @@ class Masina {
    }
 
    gazas(kiek) { 
-
       if (kiek > this.maxGreitis) {
          this.greitis = this.maxGreitis;
       }
-   
       if (this.greitis + kiek < 0) {
          this.greitis = 0;
       } else {
@@ -59,7 +57,6 @@ class SportineMasina extends Masina {
           this.spoileris = false;
       }
    }
-
 }
 
 let m1 = new Masina('Volvo', 220);
