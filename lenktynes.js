@@ -26,14 +26,17 @@ class Masina {
       this.atstumas = 0;
    }
 
-   gazas(kiek) { 
-      if (kiek > this.maxGreitis) {
-         this.greitis = this.maxGreitis;
+   gazas(kiek) {
+      this.greitis += kiek;
+      if (this.greitis > this.maxGreitis) {
+          this.greitis = this.maxGreitis;
       }
-      if (this.greitis + kiek < 0) {
-         this.greitis = 0;
-      } else {
-         this.greitis += kiek;
+   }
+
+   stabdis(kiek) {
+      this.greitis -= kiek;
+      if (this.greitis < 0) {
+          this.greitis = 0;
       }
    }
 
@@ -50,11 +53,26 @@ class SportineMasina extends Masina {
    }
 
    pakeiskSpoilerioPozicija() {
-      let rand = Math.random();
-      if (rand >= 0.49) {
+      if (Math.random() > .5) {
           this.spoileris = true;
       } else {
           this.spoileris = false;
+      }
+   }
+
+   gazas(kiek) {
+      if (!this.spoileris) {
+         super.gazas(kiek * 2);
+      } else {
+         super.gazas(kiek);
+      }
+   }
+
+   stabdis(kiek) {
+      if (this.spoileris) {
+         super.stabdis(kiek * 2);
+      } else {
+         super.stabdis(kiek);
       }
    }
 }
@@ -72,9 +90,44 @@ const masinuMasyvas = [
    new SportineMasina('Porshe', 330)
 ];
 
-masinuMasyvas[7].gazas(100);
-masinuMasyvas[7].gazas(-101);
-masinuMasyvas[7].gazas(50);
-masinuMasyvas[7].gazas(52);
+let maxAtstumas = 0;
+let lyderis = '';
+let komentatorius = 100;
 
-console.log(masinuMasyvas[7]);
+do {
+   masinuMasyvas.forEach(el => {
+      let nuo = -5;
+      let iki = 5;
+      let naujasGreitis = Math.trunc(Math.random() * (iki - nuo + 1) + nuo); // random greitis
+
+      if (el instanceof SportineMasina) {  // spoilerio reikalai
+         el.pakeiskSpoilerioPozicija();
+         //console.log('Spoileris pakeite pozicija', el.pavadinimas);
+      }
+
+      if (naujasGreitis > 0) {  // gazuojam
+         el.gazas(naujasGreitis);
+         el.vaziuojam();
+         //console.log('Pagazavo', el.pavadinimas, naujasGreitis, 'atstumas', el.atstumas);
+      } else {
+         naujasGreitis = -naujasGreitis;  // stabdom
+         el.stabdis(naujasGreitis);
+         el.vaziuojam();
+         //console.log('Stabde', el.pavadinimas, naujasGreitis, 'atstumas', el.atstumas);
+      }
+
+      if (el.atstumas > maxAtstumas) {  // lyderis
+         maxAtstumas = el.atstumas;
+         lyderis = el.pavadinimas;
+      }
+   })
+
+   if (maxAtstumas > komentatorius) {  // komentatoriue
+      console.log('Lyderis yra:', lyderis, 'jo nuvaziuotas atstumas yra:', maxAtstumas);
+      komentatorius = komentatorius + 100;
+   }
+
+} while (maxAtstumas < 1000)
+
+masinuMasyvas.sort((a, b) => b.atstumas - a.atstumas); // rusiavimas
+masinuMasyvas.forEach(el => console.log(el.pavadinimas, el.atstumas));  // rezultatu lentele
