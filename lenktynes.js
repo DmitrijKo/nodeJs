@@ -122,8 +122,8 @@ do {
       }
    })
 
-   if (maxAtstumas > komentatorius) {  // komentatoriue
-      console.log('Lyderis yra:', lyderis, 'jo nuvaziuotas atstumas yra:', maxAtstumas);
+   if (maxAtstumas > komentatorius) {  // komentatorius
+      console.log('Lyderis yra:', lyderis + ', jo nuvaziuotas atstumas yra:', maxAtstumas);
       komentatorius = komentatorius + 100;
    }
 
