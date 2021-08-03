@@ -27,5 +27,12 @@ let spoileris = false;
 
    naujasgreiti = -greitis;
 
-   console.log(naujasgreiti);
+   //console.log(naujasgreiti);
+
+
+   let text = 'labas';
+   let text1 = ['vakaras']
+
+   text1.push(text); 
+   console.log(text1.toString());
 
