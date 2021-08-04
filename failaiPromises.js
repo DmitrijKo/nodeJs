@@ -14,36 +14,28 @@ let pilnasTextas = [];
 fs.readFile(fileNameA, {
       encoding: "utf-8"
    })
-   .then(
-      data => {
+   .then(data => {
          console.log("perskaiciau is failo " + fileNameA);
          pilnasTextas.push(data);
-         return fs.readFile(fileNameB, {
-            encoding: "utf-8"
-         });
+         return fs.readFile(fileNameB, {encoding: "utf-8"});
       }
    )
 
-   .then(
-      data => {
+   .then(data => {
          console.log("perskaiciau is failo " + fileNameB);
          pilnasTextas.push(data);
-         return fs.readFile(fileNameC, {
-            encoding: "utf-8"
-         });
+         return fs.readFile(fileNameC, {encoding: "utf-8"});
       }
    )
 
-   .then(
-      data => {
+   .then(data => {
          console.log("perskaiciau is failo " + fileNameC);
          pilnasTextas.push(data);
          console.log('Surinktas tekstas:', pilnasTextas.toString());
       }
    )
 
-   .catch(
-      err => {
+   .catch(err => {
          pilnasTextas = [];
          pilnasTextas.push('Gavome klaida ' + err);
          console.log(pilnasTextas.toString());
