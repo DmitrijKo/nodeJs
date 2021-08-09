@@ -1,38 +1,29 @@
-let rand = Math.random();
-//console.log(rand);
+let obj = [
+   {
+      vardas: "Jonas",
+      pavarde: "Jonaitis",
+      alga: 1000
+   },
 
-let nuo = -5;
-let iki = 5;
-let rand2 = Math.trunc(Math.random() * (iki - nuo + 1) + nuo);
-//console.log(rand2);
+   {
+      vardas: "Petras",
+      pavarde: "Petraitis",
+      alga: 2000
+   },
 
-//console.log(100 - 100 == true);     
+   {
+      vardas: "Vardenis",
+      pavarde: "Pavardenis",
+      alga: 1500
+   },
 
-let spoileris = false;
-//let rand1 = Math.random();
-
-   function pakeiskSpoilerioPozicija() {
-      
-      if (Math.random() > .5) {
-          spoileris = true;
-      } else {
-          spoileris = false;
-      }
+   {
+      vardas: "Dzonis",
+      pavarde: "Bravo",
+      alga: 2500
    }
+]
 
-   //pakeiskSpoilerioPozicija();
-   //console.log(spoileris);
-
-   let greitis = -5;
-
-   naujasgreiti = -greitis;
-
-   //console.log(naujasgreiti);
-
-
-   let text = 'labas';
-   let text1 = ['vakaras']
-
-   text1.push(text); 
-   console.log(text1.toString());
-
+console.log(obj);
+console.log("====================");
+console.log(obj.splice(3,1));

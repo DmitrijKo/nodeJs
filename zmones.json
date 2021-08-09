@@ -1,0 +1,27 @@
+[
+    {
+        "vardas": "Petras",
+        "pavarde": "Petraitis",
+        "alga": 1500
+    },
+    {
+        "vardas": "Jonas",
+        "pavarde": "Jonaitis",
+        "alga": 1000
+    },
+    {
+        "vardas": "Vardenis",
+        "pavarde": "Pavardenis",
+        "alga": 2500
+    },
+    {
+        "vardas": "Mindaugas",
+        "pavarde": "Mindaugaitis",
+        "alga": 1500
+    },
+    {
+        "vardas": "Birute",
+        "pavarde": "Rastenyte",
+        "alga": 1700
+    }
+]
