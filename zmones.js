@@ -36,7 +36,6 @@ function displayText() {
    console.log("0. Pabaigti");
 }
 
-let zmones = [];
 
 async function main() {
    // ND
@@ -65,7 +64,7 @@ async function main() {
          })
 
          let zmObj = JSON.parse(allData)
-         //console.log(zmObj);
+
          let vardas = await inputText("Ivesk varda: ");
          let pavarde = await inputText("Ivesk pavarde: ");
          try {
@@ -140,7 +139,7 @@ async function main() {
             console.log("Turtuoliu sarasas:");
 
             zmObj.forEach(el => {
-               if (el.alga > alga) {
+               if (el.alga >= alga) {
                   console.log(el.vardas, el.pavarde, el.alga);
                }
             });
